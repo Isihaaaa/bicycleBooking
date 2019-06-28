@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { styles } from './App/Common/Styles/Style'
 
  import BicycleDetail from './App/components/BicycleDetails/BicycleDetails';
@@ -7,11 +7,14 @@ import { styles } from './App/Common/Styles/Style'
 
  export default function App() { 
  
+  const bicycleSelectedHandler = () =>{
+
+  }
+  
   return (
     <View style={styles.container}>
-      {/* <BicycleDetail /> */}
-      <BicycleList />
-      <BicycleList />
+        {/* <BicycleDetail /> */}
+        <BicycleList onItemSelected={{bicycleSelectedHandler}} onItemPressed={()=>{alert('Hello World')}}/>
     </View>
   );
 }

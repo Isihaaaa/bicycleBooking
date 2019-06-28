@@ -12,7 +12,8 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         width: '100%',
-        marginBottom: 5
+        marginBottom: 5,
+        backgroundColor: '#eee'
         
     },
     bicycleName:{
