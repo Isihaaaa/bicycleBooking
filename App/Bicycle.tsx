@@ -15,11 +15,12 @@ export class BicycleDetails extends BicycleHeader implements IBicycle {
   constructor(
     public id: number,
     public name: string,
+    public description: string,
     public type: string,
     public year: Date,
     public color: string,
     public image: string,
-    public description: string
+    public reservation: boolean
   ) {
     super(id, name, type, year, color, image);
   }

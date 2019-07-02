@@ -6,4 +6,5 @@ interface IGetByIdResponse {
   year: Date;
   color: string;
   image: string;
+  reservation: boolean;
 }
