@@ -28,6 +28,15 @@ export default class MockedBicycleApi {
         image:
           'http://www.csepelkerekparuzlet.hu/shop_seopic/1557/93781601BK/585x585,r/Csepel-BW-Boss-Cruiser-FFi-kerekpar-Fekete.jpg?time=1553157210',
       },
+      {
+        id: 3,
+        name: 'Csepel Copy',
+        type: 'fixi',
+        year: new Date(),
+        color: 'blue',
+        image:
+          'https://www.santafixie.com/media/catalog/product/cache/2/image/900x600/9df78eab33525d08d6e5fb8d27136e95/p/o/poloandbike-williamsburg-newgen-azul-1.jpg',
+      },
     ];
 
     return bicycles;
@@ -57,6 +66,17 @@ export default class MockedBicycleApi {
       },
       {
         id: 2,
+        name: 'Csepel BLACKWOOD CRUISER',
+        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, dicta. Cum alias minus cumque!',
+        type: 'Cruiser',
+        year: new Date(),
+        color: 'black',
+        image:
+          'http://www.csepelkerekparuzlet.hu/shop_seopic/1557/93781601BK/585x585,r/Csepel-BW-Boss-Cruiser-FFi-kerekpar-Fekete.jpg?time=1553157210',
+        reservation: false,
+      },
+      {
+        id: 3,
         name: 'Csepel BLACKWOOD CRUISER',
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, dicta. Cum alias minus cumque!',
         type: 'Cruiser',

@@ -10,38 +10,39 @@ export class BicycleService {
   }
 
   public async getBicyclesAsync(): Promise<BicycleHeader[]> {
-    let bicycleHeaders = [];
-
     // TODO
     // 1. call api method const response = await this._api.getAllAsync();
     const response = await this._api.getAllAsync();
 
     // 2. map GetAllResponse[] to BicycleHeader[]
-    response.map(el => {
-      bicycleHeaders.push(el);
+    return response.map(el => {
+      // 3. return mapped list
+      return new BicycleHeader(el.id, el.name, el.type, el.year, el.color, el.image);
     });
-
-    // 3. return mapped list
-    return bicycleHeaders;
   }
 
-  public async getBicycleAsync(id): Promise<BicycleDetails[]> {
-    let bicycleDetails = [];
-
+  public async getBicycleAsync(currentBicycleId): Promise<BicycleDetails> {
     const response = await this._api.getbyIdAsync();
 
-    response.map(el => bicycleDetails.push(el));
+    // const bicycle = response.filter(bicycle => {
+    //   bicycle.id === currentBicycleId;
+    // });
 
-    const result = bicycleDetails.filter(el => {
-      el.id === id;
-    });
+    const bicycle = response[currentBicycleId];
 
-    return result;
+    return new BicycleDetails(
+      bicycle.id,
+      bicycle.name,
+      bicycle.description,
+      bicycle.type,
+      bicycle.year,
+      bicycle.color,
+      bicycle.image,
+      bicycle.reservation
+    );
   }
 
   public async makeReservationForbicycleAsync(reservation): Promise<boolean> {
-    reservation ? (reservation = false) : (reservation = true);
-
-    return true;
+    return reservation ? (reservation = false) : (reservation = true);
   }
 }
