@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { FlatList, Text, View, Image, TouchableOpacity } from 'react-native';
 import { styles } from '../Common/Styles/Style';
 
-import { BicycleHeader } from '../Bicycle';
 import { BicycleService } from '../BicycleService';
-import BicycleDetails from './BicycleDetails';
+import { BicycleHeader } from '../Bicycle';
 
 export default class BicycleList extends Component {
   public bicycleService: BicycleService;
@@ -17,26 +16,26 @@ export default class BicycleList extends Component {
   }
 
   state = {
-    data: [],
+    bicycles: [],
   };
 
   async getBicycles() {
-    const bicycle = await this.bicycleService.getBicyclesAsync();
+    const mockedBicycles = await this.bicycleService.getBicyclesAsync();
 
     this.setState({
-      data: bicycle,
+      bicycles: mockedBicycles,
     });
   }
 
   render() {
     return (
       <FlatList
-        data={this.state.data}
+        data={this.state.bicycles}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() => {
-              this.props.navigation.navigate('BicycleDetails');
+              this.props.navigation.navigate('BicycleDetails', { itemId: item.id });
             }}
           >
             <View style={styles.bicycleListItem}>

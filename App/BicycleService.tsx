@@ -21,14 +21,12 @@ export class BicycleService {
     });
   }
 
-  public async getBicycleAsync(currentBicycleId): Promise<BicycleDetails> {
-    const response = await this._api.getbyIdAsync();
+  public async getBicycleAsync(currentBicycleId: number): Promise<BicycleDetails> {
+    const bicycle = await this._api.getbyIdAsync(currentBicycleId);
 
-    // const bicycle = response.filter(bicycle => {
-    //   bicycle.id === currentBicycleId;
-    // });
-
-    const bicycle = response[currentBicycleId];
+    // console.log('bicycleServiceben a filter: ' +  bicycle);
+    // const bicycle = response[currentBicycleId];
+    // console.log(bicycle);
 
     return new BicycleDetails(
       bicycle.id,

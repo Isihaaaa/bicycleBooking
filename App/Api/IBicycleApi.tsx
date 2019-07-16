@@ -1,4 +1,4 @@
 export interface IBicycleApi {
   getAllAsync(): Promise<IGetAllResponse[]>;
-  getbyIdAsync(): Promise<IGetByIdResponse[]>;
+  getbyIdAsync(id: number): Promise<IGetByIdResponse>;
 }

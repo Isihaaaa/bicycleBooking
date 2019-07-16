@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { styles } from '../Common/Styles/Style';
+import { NavigationScreenProps } from 'react-navigation';
 
-export default class Home extends Component {
+export default class Home extends Component<NavigationScreenProps> {
   render() {
     return (
       <View style={styles.container}>
